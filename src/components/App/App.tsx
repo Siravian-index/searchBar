@@ -17,11 +17,10 @@ function App() {
         })
         setProducts(temporalProductsHolder)
       })
-    
+
   }, [])
 
   const hasProducts = products.length > 0
-
 
   return (
     <div>

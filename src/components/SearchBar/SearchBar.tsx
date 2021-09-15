@@ -22,7 +22,7 @@ const SearchBar = (props: { productList: string[], fetchedProducts: boolean }) =
       {shouldRenderButton && <button className="clear-button" onClick={handleClickClear}>Clear</button>}
       <ul className="ul-container">
         {filterProducts.map(ele => {
-          return <li key={ele}>{ele.replace(/^./, ele.slice(0, 1).toLocaleUpperCase())}</li>
+          return <li className="li-item" key={ele}>{ele.replace(/^./, ele.slice(0, 1).toLocaleUpperCase())}</li>
         })}
       </ul>
       {props.fetchedProducts && filterProducts.length === 0 && <div>Item not found</div>}

@@ -25,3 +25,8 @@
 .clear-button:hover {
   background-color: whitesmoke;
 }
+
+.li-item {
+  margin: 0.2rem;
+}
+
