@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SearchBar.css';
 
-const SearchBar = (props: {productList: string[]}) => {
+const SearchBar = (props: { productList: string[], fetchedProducts: boolean }) => {
   const [searchText, setSearchText] = useState("");
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchText(event.target.value)
@@ -16,7 +16,13 @@ const SearchBar = (props: {productList: string[]}) => {
     return product.includes(searchText.toLocaleLowerCase())
   })
 
-  console.log(filterProducts)
+  // // useEffect
+  // useEffect(() => {
+  //   console.log(filterProducts)
+
+  // }, [filterProducts])
+
+
   return (
     <div className="container">
       <input className="search-bar" type="text" onChange={handleInputChange} value={searchText} />
@@ -26,7 +32,7 @@ const SearchBar = (props: {productList: string[]}) => {
           return <li key={ele}>{ele.replace(/^./, ele.slice(0, 1).toLocaleUpperCase())}</li>
         })}
       </ul>
-      {filterProducts.length === 0 && <p>Item not found</p>}
+      {props.fetchedProducts && filterProducts.length === 0 && <div>Item not found</div>}
 
     </div>
   )

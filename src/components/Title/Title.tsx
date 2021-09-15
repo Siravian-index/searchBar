@@ -1,11 +1,11 @@
 import React from 'react';
 import './Title.css';
 
-const Title = () => {
-  const mainTitle = "Type Search App"
+const Title = (props: { mainTitle: string }) => {
+  // const mainTitle = "Type Search App"
   return (
     <div className="container">
-      <h1 className="main-title">{mainTitle}</h1>
+      <h1 className="main-title">{props.mainTitle}</h1>
     </div>
   )
 }
