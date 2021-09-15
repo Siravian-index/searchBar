@@ -16,13 +16,6 @@ const SearchBar = (props: { productList: string[], fetchedProducts: boolean }) =
     return product.includes(searchText.toLocaleLowerCase())
   })
 
-  // // useEffect
-  // useEffect(() => {
-  //   console.log(filterProducts)
-
-  // }, [filterProducts])
-
-
   return (
     <div className="container">
       <input className="search-bar" type="text" onChange={handleInputChange} value={searchText} />
