@@ -1,0 +1,13 @@
+.main-title:hover {
+  text-decoration: underline;
+}
+
+.main-title:hover::before {
+  text-decoration: underline;
+  content: "<";
+}
+
+.main-title:hover::after {
+  text-decoration: underline;
+  content: " />";
+}
